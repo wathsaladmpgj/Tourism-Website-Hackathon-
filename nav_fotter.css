@@ -1,16 +1,26 @@
-nav ul{
+/* Navigation Bar */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.nav-links {
     display: flex;
-    flex-direction: row;
-    gap: 3rem;
-    padding: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-nav ul li a{
-    text-decoration: none;
-    color: black;
-}
-nav ul li{
+    justify-content: center;
     list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
 }
 nav ul li a:hover {
     color: blue;
