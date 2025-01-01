@@ -11,10 +11,11 @@ $plainId = isset($_GET['plain_id']) ? intval($_GET['plain_id']) : 0;
 
 // Get plain name and multiple location details from database
 $plainName = "";
+$days = 0;
 $locationDetails = [];
 
 // First get the plain name
-$query = "SELECT pn.Plain_name 
+$query = "SELECT pn.Plain_name,p.Days
           FROM plain p 
           LEFT JOIN plain_name pn ON p.Plain_name_id = pn.id 
           WHERE p.id = ?";
@@ -24,6 +25,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 if ($result && $row = $result->fetch_assoc()) {
     $plainName = strtolower($row['Plain_name']);
+    $days = intval($row['Days']);
 }
 $stmt->close();
 
@@ -129,6 +131,9 @@ if($price_result->num_rows == 1){
     $price_accommodation= $price['accommodation'];
 
     $all_price_breakfast = $price_breakfast*$breakfastCount*($adultCount+$childCount/2);
+    $all_price_dinner = $price_dinner*$dinnerCount*($adultCount+$childCount/2);
+    $all_human_guide = $price_human_guide*$days;
+    $all_price_accoummodation = $price_accommodation*($days-1)*($adultCount+$childCount/2);
 }
 
 ?>
@@ -139,20 +144,21 @@ if($price_result->num_rows == 1){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tour Vehicle Selection</title>
     <link rel="stylesheet" href="./trip_page.css">
-    <style>
-        .slider .list .item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-        .thumbnail .item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-    </style>
+    <link rel="stylesheet" href="./nav_fotter.css">
 </head>
 <body>
+    <nav class="navbar">
+      <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Destination</a></li>
+          <li><a href="#">Activities</a></li>
+          <li><a href="#">Foods</a></li>
+          <li><a href="#">Festival</a></li>
+          <li><a href="#">Hotel</a></li>
+          <li><a href="#">Plan Your Trip</a></li>
+          <li><a href="#">Blog</a></li>
+      </ul>
+    </nav>
     <div class="container">
         
         <!-- Dynamic Slider -->
@@ -166,9 +172,8 @@ if($price_result->num_rows == 1){
                                  alt="<?php echo htmlspecialchars($location['name']); ?>"
                                  onerror="this.src='image/placeholder.jpg'">
                             <div class="content">
-                                <p><?php echo htmlspecialchars($location['name']); ?></p>
-                                <h2>Location <?php echo $index + 1; ?></h2>
-                                <p><?php echo htmlspecialchars($location['details']); ?></p>
+                                <p>Location <?php echo $index + 1; ?><p>
+                                <h2><?php echo htmlspecialchars($location['name']); ?></h2>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -204,10 +209,8 @@ if($price_result->num_rows == 1){
                             <th>Adults</th>
                             <th>Children</th>
                             <th>Vehicle</th>
-                            <th>Value</th>
                             <th>Breakfast Meals</th>
                             <th>Dinner Meals</th>
-                            <th>Breakfast pice</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -218,10 +221,8 @@ if($price_result->num_rows == 1){
                             <td><?php echo htmlspecialchars($adultCount); ?></td>
                             <td><?php echo htmlspecialchars($childCount); ?></td>
                             <td><?php echo ucfirst($vehicle); ?></td>
-                            <td><?php echo htmlspecialchars($row[$vehicle]); ?></td>
                             <td><?php echo htmlspecialchars($breakfastCount); ?></td>
                             <td><?php echo htmlspecialchars($dinnerCount); ?></td>
-                            <td><?php echo htmlspecialchars($all_price_breakfast); ?></td>
                         </tr>
                     </tbody>
                 </table>
@@ -230,17 +231,38 @@ if($price_result->num_rows == 1){
               <?php endif; ?>
 
               <!-- Simple Location List -->
-              <h3>Tour Locations</h3>
-              <div class="location-list">
-                   <?php if (!empty($location['name'])): ?>
-                      <p><?php echo htmlspecialchars($location['name']); ?></p>
-                   <?php else: ?>
-                       <p>No locations found for this tour.</p>
-                   <?php endif; ?>
-              </div>
+              
+                <div class="timeline">
+                    <h3 class="timeline_start">Tour Start</h3>
+                    <div class="timeline-line"></div>
+                        <?php if (!empty($locationDetails)): ?>
+                            <?php foreach ($locationDetails as $index => $location): ?>
+                                <div class="timeline-item">
+                                    <div class="timeline-dot"></div>
+                                    <div class="timeline-content">
+                                        <h3 class="timeline-title">
+                                            <?php echo htmlspecialchars($location['name']); ?>
+                                            <span class="timeline-arrow" data-index="<?php echo $index; ?>">↓</span>
+                                        </h3>
+                                        <div class="timeline-details" id="details-<?php echo $index; ?>">
+                                            <p><?php echo htmlspecialchars($location['details']); ?></p>
+                                            <?php if (!empty($location['image'])): ?>
+                                                <img class="timeline-image" 
+                                                    src="<?php echo htmlspecialchars($location['image']); ?>"
+                                                    alt="<?php echo htmlspecialchars($location['name']); ?>"
+                                                    onerror="this.style.display='none'">
+                                            <?php endif; ?>
+                                        </div>
+                                    </div>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                        <p>No locations found for this tour.</p>
+                        <?php endif; ?>
+                    <h3 class="timeline_end">Tour End</h3>
+                </div>
             </div>
         </div>
-        
         <!-- Form for selecting details-->
         <div class="Details_enter">
             <form id="vehicleForm" method="POST" action="">

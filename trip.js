@@ -137,3 +137,32 @@ const typeSelect = document.getElementById('type');
         if (typeSelect.value) {
             typeSelect.dispatchEvent(new Event('change'));
         }
+
+        /*timline for location----------*/
+        document.addEventListener('DOMContentLoaded', function() {
+            const arrows = document.querySelectorAll('.timeline-arrow');
+            
+            arrows.forEach(arrow => {
+                arrow.addEventListener('click', function() {
+                    const index = this.dataset.index;
+                    const details = document.getElementById(`details-${index}`);
+                    const currentlyActive = document.querySelector('.timeline-details.active');
+                    const currentArrow = document.querySelector('.timeline-arrow.active');
+                    
+                    // Close currently open details if clicking a different arrow
+                    if (currentlyActive && currentlyActive !== details) {
+                        currentlyActive.classList.remove('active');
+                        currentArrow.classList.remove('active');
+                    }
+                    
+                    // Toggle current details
+                    this.classList.toggle('active');
+                    details.classList.toggle('active');
+                    
+                    // Scroll details into view if opening
+                    if (details.classList.contains('active')) {
+                        details.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                    }
+                });
+            });
+        });

@@ -1,7 +1,7 @@
 /* Navigation Bar */
 .navbar {
-    background-color: #333;
-    color: #fff;
+    background-color: #c3f6f5;
+    color: black;
     padding: 1rem 0;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .nav-links a {
-    color: white;
+    color: #000;
     text-decoration: none;
     font-size: 1rem;
 }
