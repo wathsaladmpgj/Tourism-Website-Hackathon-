@@ -69,7 +69,7 @@ if ($plainId > 0) {
     $stmt->close();
 }
 
-// Rest of your variables initialization
+// Initialize variables
 $type = '';
 $row = null;
 $vehicle = '';
@@ -77,6 +77,9 @@ $adultCount = 0;
 $childCount = 0;
 $breakfastCount = 0;
 $dinnerCount = 0;
+$guideType = '';
+$total_price = 0;
+$guide_price = 0;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $plainId = intval($_POST['plain_id']);
@@ -84,6 +87,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $breakfastCount = intval($_POST['breakfastCount']);
     $dinnerCount = intval($_POST['dinnerCount']);
     $type = $_POST['type'];
+    $guideType = $_POST['guide_type'];
     
     // Calculate adults and children based on type or form input
     $adultCount = 1; // Default
@@ -100,42 +104,70 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Allowed vehicle columns
-    $allowedVehicles = ['bic', 'car', 'van', 'tuktuk'];
-
-    if (in_array($vehicle, $allowedVehicles)) {
-        // Join with Plain name table to get plain_name
-        $query = "SELECT p.id, pn.Plain_name, p.$vehicle 
-                 FROM plain p 
-                 LEFT JOIN plain_name pn ON p.Plain_name_id = pn.id 
-                 WHERE p.id = ?";
-        
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("i", $plainId);
-        $stmt->execute();
-        $result = $stmt->get_result();
-        $row = $result->fetch_assoc();
-        $stmt->close();
-    }
+    $query = "SELECT p.id, pn.Plain_name
+             FROM plain p 
+             LEFT JOIN plain_name pn ON p.Plain_name_id = pn.id 
+             WHERE p.id = ?";
+    
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $plainId);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $row = $result->fetch_assoc();
+    $stmt->close();
 }
-/*--------Calulate price-------*/
-$all_price_breakfast=0;
+
+/*--------Calculate price-------*/
+$all_price_breakfast = 0;
+$all_price_dinner = 0;
+$all_human_guide = 0;
+$all_ai_guide = 0;
+$all_price_accommodation = 0;
+$vehicle_price = 0;
+
 $price_query = "SELECT * FROM price";
 $price_result = $conn->query($price_query);
-if($price_result->num_rows == 1){
+if($price_result->num_rows == 1) {
     $price = $price_result->fetch_assoc();
 
     $price_breakfast = $price['breakfast'];
     $price_dinner = $price['dinner'];
-    $price_human_guide= $price['human_guide'];
+    $price_human_guide = $price['human_guide'];
     $price_ai_guide = $price['ai_guide'];
-    $price_accommodation= $price['accommodation'];
+    $price_accommodation = $price['accommodation'];
 
-    $all_price_breakfast = $price_breakfast*$breakfastCount*($adultCount+$childCount/2);
-    $all_price_dinner = $price_dinner*$dinnerCount*($adultCount+$childCount/2);
-    $all_human_guide = $price_human_guide*$days;
-    $all_price_accoummodation = $price_accommodation*($days-1)*($adultCount+$childCount/2);
+    $price_bicycle = $price['bic'];
+    $price_car = $price['car'];
+    $price_van = $price['van'];
+    $price_tuktuk = $price['tuktuk'];
+
+    // Calculate meal prices
+    $all_price_breakfast = $price_breakfast * $breakfastCount * ($adultCount + $childCount/2);
+    $all_price_dinner = $price_dinner * $dinnerCount * ($adultCount + $childCount/2);
+    
+    // Calculate guide price based on selection
+    if ($guideType === 'human') {
+        $guide_price = $price_human_guide * $days;
+    } else if ($guideType === 'ai') {
+        $guide_price = $price_ai_guide * $days;
+    }
+
+    if ($vehicle === 'bic') {
+        $vehicle_price = $price_bicycle * $days;
+    } else if ($vehicle === 'car') {
+        $vehicle_price = $price_car * $days;
+    } else if ($vehicle === 'van') {
+        $vehicle_price = $price_van * $days;
+    } else if ($vehicle === 'tuktuk') {
+        $vehicle_price = $price_tuktuk * $days;
+    }
+    
+    // Calculate accommodation
+    $all_price_accommodation = $price_accommodation * ($days-1) * ($adultCount + $childCount/2);
+
+    // Calculate total price
+    $total_price = $all_price_breakfast + $all_price_dinner + $guide_price + $all_price_accommodation + $vehicle_price;
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -296,6 +328,15 @@ if($price_result->num_rows == 1){
             </div>
 
             <div class="form-group">
+                <label for="guide_type">Select Guide Type:</label>
+                <select id="guide_type" name="guide_type" required>
+                    <option value="">Select a guide type</option>
+                    <option value="human">Human Guide</option>
+                    <option value="ai">AI Guide</option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="breakfastCount">Number of Breakfast Meals:</label>
                 <input type="number" id="breakfastCount" name="breakfastCount" min="0" required>
             </div>
@@ -308,11 +349,12 @@ if($price_result->num_rows == 1){
             <input type="hidden" name="plain_id" value="<?php echo $plainId; ?>">
             <button type="submit">Submit</button>
            </form>
+
+           <div>
+            <h1>Price : <?php echo htmlspecialchars($total_price); ?> </h1>
+        </div>
         </div>
     </div>
-
-    
-
     <script src="./trip.js"></script>
 </body>
 </html>
