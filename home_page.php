@@ -10,8 +10,8 @@
 <body>
     <nav class="navbar">
       <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Destination</a></li>
+          <li><a href="./home_page.php">Home</a></li>
+          <li><a href="./destination_page_1.html">Destination</a></li>
           <li><a href="#">Activities</a></li>
           <li><a href="#">Foods</a></li>
           <li><a href="#">Festival</a></li>
