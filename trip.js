@@ -166,3 +166,34 @@ const typeSelect = document.getElementById('type');
                 });
             });
         });
+
+
+
+        // Display the booking modal
+        function showModal() {
+            const modal = document.getElementById('bookingModal');
+            modal.style.display = 'block';
+        }
+
+        // Hide the modal when clicking outside of it
+        window.onclick = (event) => {
+            const modal = document.getElementById('bookingModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+
+        // Close the modal on close button click
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            const modal = document.getElementById('bookingModal');
+            modal.style.display = 'none';
+        });
+
+        // Optional: Handle form submission
+        document.getElementById('form').onsubmit = (e) => {
+            e.preventDefault(); // Prevent default form submission
+            alert('Booking submitted!');
+            document.getElementById('bookingModal').style.display = 'none'; // Close the modal
+        };
+
+
