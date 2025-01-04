@@ -31,7 +31,7 @@ $stmt->close();
 
 // Get all location IDs for this plain
 if ($plainId > 0) {
-    $query = "SELECT Loc1, Loc2, Loc3, Loc4, Loc5, Loc6, Loc7, Loc8, Loc9 
+    $query = "SELECT Loc1, Loc2, Loc3, Loc4, Loc5, Loc6, Loc7, Loc8, Loc9,Loc10 
               FROM plain 
               WHERE id = ?";
     $stmt = $conn->prepare($query);
@@ -41,7 +41,7 @@ if ($plainId > 0) {
     
     if ($row = $result->fetch_assoc()) {
         // For each Loc column, get the location details if it's not 0
-        for ($i = 1; $i <= 9; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $locId = $row["Loc$i"];
             if ($locId > 0) {
                 // Get location details for this Loc_id
@@ -168,6 +168,8 @@ if($price_result->num_rows == 1) {
     // Calculate total price
     $total_price = $all_price_breakfast + $all_price_dinner + $guide_price + $all_price_accommodation + $vehicle_price;
 }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -192,7 +194,6 @@ if($price_result->num_rows == 1) {
       </ul>
     </nav>
     <div class="container">
-        
         <!-- Dynamic Slider -->
         <div>
             <div class="slider">
@@ -241,6 +242,7 @@ if($price_result->num_rows == 1) {
                             <th>Adults</th>
                             <th>Children</th>
                             <th>Vehicle</th>
+                            <th>Guide type</th>
                             <th>Breakfast Meals</th>
                             <th>Dinner Meals</th>
                         </tr>
@@ -253,6 +255,7 @@ if($price_result->num_rows == 1) {
                             <td><?php echo htmlspecialchars($adultCount); ?></td>
                             <td><?php echo htmlspecialchars($childCount); ?></td>
                             <td><?php echo ucfirst($vehicle); ?></td>
+                            <td><?php echo htmlspecialchars($guideType); ?></td>
                             <td><?php echo htmlspecialchars($breakfastCount); ?></td>
                             <td><?php echo htmlspecialchars($dinnerCount); ?></td>
                         </tr>
@@ -338,23 +341,99 @@ if($price_result->num_rows == 1) {
 
             <div class="form-group">
                 <label for="breakfastCount">Number of Breakfast Meals:</label>
-                <input type="number" id="breakfastCount" name="breakfastCount" min="0" required>
+                <input type="number" id="breakfastCount" name="breakfastCount" min="0">
             </div>
 
             <div class="form-group">
                 <label for="dinnerCount">Number of Dinner Meals:</label>
-                <input type="number" id="dinnerCount" name="dinnerCount" min="0" required>
+                <input type="number" id="dinnerCount" name="dinnerCount" min="0">
             </div>
 
             <input type="hidden" name="plain_id" value="<?php echo $plainId; ?>">
             <button type="submit">Submit</button>
            </form>
 
-           <div>
+           <div class="price-section">
             <h1>Price : <?php echo htmlspecialchars($total_price); ?> </h1>
-        </div>
+            <button class="book-button" onclick="showModal()">Booking Your Tour</button>
+           </div>
         </div>
     </div>
+
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Book Your Tour</h2>
+            <form method="POST" action="./process_booking.php">
+                <h3>Card Details</h3>
+                <div class="from-sec">
+                    <div class="form-group">
+                        <label>Account Number</label>
+                        <input type="number" name="account_number" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Exp Date</label>
+                        <input type="text" name="exp_date" placeholder="MM/YY" required>
+                    </div>
+                </div>
+                <div class="from-sec">
+                    <div class="form-group">
+                        <label>CVV</label>
+                        <input type="text" name="cvv" maxlength="4" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Price</label>
+                        <select name="payment_type" id="payment_type" required>
+                            <option value="Full Payment">Full Payment</option>
+                            <option value="Half Payment">Half Payment</option>
+                        </select>
+                    </div>
+                </div>
+                <h3>Personal Details</h3>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="customer_name" name="customer_name" required>
+                </div>
+                <div class="from-sec">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="tel" name="phone" id="phpne">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="travel_date">Travel Date:</label>
+                    <input type="date" id="travel_date" name="travel_date" required>
+                </div>
+                <button type="submit" class="book-button">Confirm Booking</button>
+            </form>  
+        </div>
+    </div>
+
     <script src="./trip.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const travelDateInput = document.querySelector('input[name="travel_date"]');
+    if (travelDateInput) {
+        const today = new Date(); // Get today's date
+        const minDate = new Date(today); 
+        minDate.setDate(today.getDate() + 3); // Add 3 days to today's date
+
+        // Format the date as YYYY-MM-DD
+        const year = minDate.getFullYear();
+        const month = String(minDate.getMonth() + 1).padStart(2, '0'); // Ensure 2-digit month
+        const day = String(minDate.getDate()).padStart(2, '0'); // Ensure 2-digit day
+
+        // Set the 'min' attribute for the input
+        travelDateInput.min = `${year}-${month}-${day}`;
+        console.log(`Minimum date set: ${travelDateInput.min}`); // Debugging information
+    }
+});
+    </script>
 </body>
 </html>
+
+

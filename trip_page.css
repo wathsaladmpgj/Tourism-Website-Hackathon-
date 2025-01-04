@@ -128,13 +128,12 @@ header .menu{
 }
 .thumbnail{
     position: absolute;
-    bottom: 0px;
+    bottom: 10px;
     z-index: 11;
     display: flex;
     gap: 10px;
     width: 100%;
-    height: 250px;
-    padding: 0 50px;
+    height: 180px;
     box-sizing: border-box;
     overflow: auto;
     justify-content: center;
@@ -362,6 +361,98 @@ button:hover {
     border-radius: 4px;
 }
 
+.price-section{
+    margin-top: 3rem;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: #000;
+}
+
+/*----price card-----*/
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: white;
+    width: 90%;
+    max-width: 450px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+}
+
+.modal-content h2 {
+    margin: 0 0 20px;
+    color: #333;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+.from-sec{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.confirm-button {
+    width: 100%;
+    padding: 14px;
+    background: #00BCD4;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: 0%;
+}
+
+.confirm-button:hover {
+    background: #008ba3;
+}
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #333;
+}
+
+.modal-content {
+    position: relative;  /* For absolute positioning of close button */
+}
 
 /* ----------------responsive ------------------*/
 @media screen and (max-width: 768px) {
