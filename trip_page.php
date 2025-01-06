@@ -169,6 +169,11 @@ if($price_result->num_rows == 1) {
     $total_price = $all_price_breakfast + $all_price_dinner + $guide_price + $all_price_accommodation + $vehicle_price;
 }
 
+session_start();
+// Check if 'form_token' is set in the session
+if (!isset($_SESSION['form_token'])) {
+    $_SESSION['form_token'] = bin2hex(random_bytes(32)); // Generate a new token if it doesn't exist
+}
 
 ?>
 <!DOCTYPE html>
@@ -238,6 +243,7 @@ if($price_result->num_rows == 1) {
                         <tr>
                             <th>Plain ID</th>
                             <th>Plain Name</th>
+                            <th>Days</th>
                             <th>Type</th>
                             <th>Adults</th>
                             <th>Children</th>
@@ -251,6 +257,7 @@ if($price_result->num_rows == 1) {
                         <tr>
                             <td><?php echo htmlspecialchars($plainId); ?></td>
                             <td><?php echo htmlspecialchars($row['Plain_name']); ?></td>
+                            <td><?php echo htmlspecialchars($days); ?></td>
                             <td><?php echo htmlspecialchars(ucfirst($type)); ?></td>
                             <td><?php echo htmlspecialchars($adultCount); ?></td>
                             <td><?php echo htmlspecialchars($childCount); ?></td>
@@ -354,7 +361,7 @@ if($price_result->num_rows == 1) {
            </form>
 
            <div class="price-section">
-            <h1>Price : <?php echo htmlspecialchars($total_price); ?> </h1>
+            <h1>Price : $<?php echo htmlspecialchars($total_price); ?> </h1>
             <button class="book-button" onclick="showModal()">Booking Your Tour</button>
            </div>
         </div>
@@ -364,7 +371,8 @@ if($price_result->num_rows == 1) {
         <div class="modal-content">
             <span class="close-btn">&times;</span>
             <h2>Book Your Tour</h2>
-            <form method="POST" action="./process_booking.php">
+            <form method="POST" action="./down_pdf.php" enctype="multipart/form-data">
+            <input type="hidden" name="form_token" value="<?php echo $_SESSION['form_token']; ?>">
                 <h3>Card Details</h3>
                 <div class="from-sec">
                     <div class="form-group">
@@ -404,10 +412,17 @@ if($price_result->num_rows == 1) {
                         <input type="tel" name="phone" id="phpne">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="travel_date">Travel Date:</label>
-                    <input type="date" id="travel_date" name="travel_date" required>
+                <div class="from-sec">
+                    <div class="form-group">
+                        <label for="travel_date">Travel Date:</label>
+                        <input type="date" id="travel_date" name="travel_date">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Uplod image</label>
+                        <input type="file" name="profile_image" id="profile_image" accept="image/*" required>
+                    </div>
                 </div>
+                <input type="number" id="travel_duration" name="travel_duration" value="<?php echo $days; ?>" hidden>
                 <button type="submit" class="book-button">Confirm Booking</button>
             </form>  
         </div>

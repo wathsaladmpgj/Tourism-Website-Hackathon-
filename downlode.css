@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.body-section{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    font-family: poppins;
+}
+.id-card {
+    width: 200px;
+    height: 340px;
+    padding: 20px;
+    background: linear-gradient(to top right, #0062ff, #040917);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.header {
+    background: linear-gradient(to Bottom left, #0062ff, #040917);
+    color: rgb(255, 255, 255);
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    text-align: center;
+    height: 112px;
+}
+.header h2{
+    margin-bottom: 0%;
+    margin-top: 0%;
+}
+.id-card h3{
+    text-align: center;
+    color: white;
+}
+
+.photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    object-fit: cover;
+    margin: 10px auto;
+    display: block;
+}
+
+.info {
+    text-align: center;
+    margin: 10px 0;
+    font-size: 15px;
+    color: rgb(11, 0, 0);
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    margin: 10px auto;
+    display: block;
+}
+
+.contact {
+    text-align: center;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    margin-top: 15px;
+}
+
+#downloadBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: #0088ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
