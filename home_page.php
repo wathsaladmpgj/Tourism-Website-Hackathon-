@@ -130,6 +130,23 @@
       </div>
     </section>
 
+    <section class="festival-section">
+        <h1>“Celebrate the Spirit of Sri Lanka”</h1>
+        <p> Mark your calendar! Experience vibrant festivals, cultural celebrations, and seasonal wonders like whale watching or the <br> Vesak Lantern Festival. Sri Lanka is alive with events to inspire your journey.</p>
+
+        <div class="event-table">
+            <div id="eventContainer" class="event-container"></div>
+        </div>
+    </section>
+
+    <section class="blog-section">
+        <h1>Latest Blog Posts</h1>
+        <div class="blog-container" id="blog-container">
+           <!-- Latest blogs will be displayed here -->
+        </div>
+    </section>
+
+
     <footer>
         <h1>hi</h1>
     </footer>
