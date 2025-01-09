@@ -18,6 +18,7 @@
           <li><a href="#">Hotel</a></li>
           <li><a href="#">Plan Your Trip</a></li>
           <li><a href="#">Blog</a></li>
+          <li><a href="">Benifit</a></li>
       </ul>
     </nav>
     <!-- Hero Section -->
