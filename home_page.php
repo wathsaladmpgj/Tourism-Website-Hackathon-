@@ -140,9 +140,30 @@
     </section>
 
     <section class="blog-section">
-        <h1>Latest Blog Posts</h1>
-        <div class="blog-container" id="blog-container">
-           <!-- Latest blogs will be displayed here -->
+        <h1>“Your Gateway to Inspiration”</h1>
+        <div id="blog-container"></div>
+    </section>
+
+    <section class="confidence-section">
+        <h1>“Plan with Ease, Travel with Confidence”</h1>
+        <p>Your ultimate travel companion is here! Find practical tips, itineraries, and insider advice to make your Sri Lankan <br> journey seamless and stress-free.</p>
+        <div class="confidence-details">
+            <div class="confidence-card">
+                <h2>Have best travel giders</h2>
+                <p>"Embark on unforgettable adventures with our expert travel guides! Our company ensures personalized experiences, insider tips, and seamless journeys to Sri Lanka's most breathtaking destinations. From hidden gems to iconic landmarks, we make every trip extraordinary. Trust us for exceptional travel guidance and memories that last a lifetime!"</p>
+            </div>
+            <div class="confidence-card">
+                <h2>Best,Security and Safty</h2>
+                <p>"Your safety is our top priority! We provide the best security measures and expert guidance for a worry-free travel experience. With local knowledge, trusted partners, and 24/7 support, explore Sri Lanka with confidence, knowing you’re in the safest hands throughout your journey."</p>
+            </div>
+            <div class="confidence-card">
+                <h2>Choice your Vehical</h2>
+                <p>"Travel your way with our diverse vehicle options! Choose from comfortable cars, spacious vans, or rugged 4x4s to suit your adventure. Whether it's city tours, mountain treks, or wildlife safaris, we ensure a smooth and stylish ride for every journey."</p>
+            </div>
+            <div class="confidence-card">
+                <h2>Clean Hotel</h2>
+                <p>"Stay in the comfort of clean, well-maintained hotels with our carefully curated selections. Enjoy spotless rooms, modern amenities, and exceptional hospitality. Whether in bustling cities or serene landscapes, your accommodation guarantees a hygienic and relaxing retreat after a day of adventure."</p>
+            </div>
         </div>
     </section>
 
