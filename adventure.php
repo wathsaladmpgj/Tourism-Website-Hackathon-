@@ -12,11 +12,18 @@
         <ul class="nav-links">
             <li><a href="./home_page.php">Home</a></li>
             <li><a href="./destination_page_1.html">Destination</a></li>
-            <li><a href="#">Activities</a></li>
-            <li><a href="#">Foods</a></li>
+            <li class="nav-item">
+                <a href="#">Activities</a>
+                <ul>
+                    <li><a href="./adventure.php">Adventure</a></li>
+                    <li><a href="./relaxation.html">Relaxation</a></li>
+                    <li><a href="./cultrul.html">Cultural </a></li>
+                </ul>
+            </li>
+            <li><a href="./food_page.html">Foods</a></li>
             <li><a href="#">Festival</a></li>
             <li><a href="#">Hotel</a></li>
-            <li><a href="#">Plan Your Trip</a></li>
+            <li><a href="./plan_your_trip.php">Plan Your Trip</a></li>
             <li><a href="#">Blog</a></li>
         </ul>
     </nav>
@@ -33,7 +40,7 @@
             <div class="text-overlay">
                 <h1>ADVENTURE AWAITS HERE</h1>
             </div>
-            <<div class="image-item2">
+            <div class="image-item2">
                 <img src="./images/activity images/hero5.png" alt="Hot Air Balloon">
                 <img src="./images/activity images/hero6.png" alt="Hot Air Balloon">
             </div>
