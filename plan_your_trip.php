@@ -67,26 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="./nav_fotter.css">
 </head>
 <body>
-<nav class="navbar">
-      <ul class="nav-links">
-          <li><a href="./home_page.php">Home</a></li>
-          <li><a href="./destination_page_1.html">Destination</a></li>
-          <li class="nav-item">
-            <a href="#">Activities</a>
-            <ul>
-            <li><a href="./adventure.php">Adventure</a></li>
-                <li><a href="./relaxation.html">Relaxation</a></li>
-                <li><a href="./cultrul.html">Cultural </a></li>
-            </ul>
-          </li>
-          <li><a href="#">Foods</a></li>
-          <li><a href="#">Festival</a></li>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="#">Plan Your Trip</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="">Benifit</a></li>
-      </ul>
-    </nav>
+    <?php include("./navigation.html") ?>
     <section class="hero">
     <div class="hero_select">
         <div class="one_select">
@@ -160,8 +141,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>No locations available for the selected day.</p>
     <?php endif; ?>
 
-    <section>
-        
-    </section>
+    <?php include 'footer.php'; ?>
 </body>
 </html>

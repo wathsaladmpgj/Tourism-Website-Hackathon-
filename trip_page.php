@@ -186,26 +186,7 @@ if (!isset($_SESSION['form_token'])) {
     <link rel="stylesheet" href="./nav_fotter.css">
 </head>
 <body>
-<nav class="navbar">
-      <ul class="nav-links">
-          <li><a href="./home_page.php">Home</a></li>
-          <li><a href="./destination_page_1.html">Destination</a></li>
-          <li class="nav-item">
-            <a href="#">Activities</a>
-            <ul>
-                <li><a href="./adventure.php">Adventure</a></li>
-                <li><a href="./relaxation.html">Relaxation</a></li>
-                <li><a href="./cultrul.html">Cultural </a></li>
-            </ul>
-          </li>
-          <li><a href="#">Foods</a></li>
-          <li><a href="#">Festival</a></li>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="#">Plan Your Trip</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="">Benifit</a></li>
-      </ul>
-    </nav>
+    <?php require 'navigation.html'; ?>
     <div class="container">
         <!-- Dynamic Slider -->
         <div>
@@ -312,10 +293,7 @@ if (!isset($_SESSION['form_token'])) {
                     <h3 class="timeline_end">Tour End</h3>
                 </div>
             </div>
-            <?php
-                if($guideType === 'ai') { ?>
-                    <h1>heloo</h1>
-            <?php } ?>
+            
         </div>
         <!-- Form for selecting details-->
         <div class="Details_enter">
@@ -375,8 +353,12 @@ if (!isset($_SESSION['form_token'])) {
            <div class="price-section">
             <h1>Price : $<?php echo htmlspecialchars($total_price); ?> </h1>
             <button class="book-button" onclick="showModal()">Booking Your Tour</button>
-           </div>
-        </div>
+           </div><br>
+           <?php
+                if($guideType === 'ai') { ?>
+                    <h3>Downlode AI agent</h3>
+            <?php } ?>
+        </div> 
     </div>
 
     <div class="modal" id="bookingModal">
@@ -439,6 +421,8 @@ if (!isset($_SESSION['form_token'])) {
             </form>  
         </div>
     </div>
+
+    <?php include 'footer.php'; ?>
 
     <script src="./trip.js"></script>
     <script>
