@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    display: flex;
+    justify-content: right;
+    align-items: flex-end;
+}
+
+.hero-image {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+}
+    
+.hero-section h1{
+    position: absolute;
+    font-size: 70px;
+    margin-bottom: 12rem;
+    margin-right: 3rem;
+    color: rgb(0, 0, 0);
+    font-family: Covered By Your Grace;
+}
+.hero-section p{
+    position: absolute;
+    font-size: 20px;
+    margin-bottom: 8rem;
+    margin-right: 3rem;
+    color: rgb(0, 0, 0);
+    font-family: poppince;
+}
+
+.benifit-cards{
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+.behifit-cards img{
+    width: 300px;
+    height: 300px;
+}
+.benifit-card1{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.benifit-card2{
+    padding-left: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.benifit-card3{
+    padding-right: 300px;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+.benifit-card4{
+    padding-left:155px ;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+/*-----------------------*/
+.blog-section{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.blogs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.blog {
+    margin-top: 2rem;
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 400px;
+    box-sizing: border-box;
+}
+.blog img {
+    width: 100%;
+    height: auto;
+}
+
+
+
+.details-section h2{
+    margin-top: 4rem;
+    text-align: center;
+}
+.use-details{
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    margin-left: 8rem;
+    margin-right: 8rem;
+}
