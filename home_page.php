@@ -4,30 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./nav_fotter.css">
     <link rel="stylesheet" href="./home_page.css">
 </head>
 <body>
-    <nav class="navbar">
-      <ul class="nav-links">
-          <li><a href="./home_page.php">Home</a></li>
-          <li><a href="./destination_page_1.html">Destination</a></li>
-          <li class="nav-item">
-            <a href="#">Activities</a>
-            <ul>
-                <li><a href="./adventure.php">Adventure</a></li>
-                <li><a href="./relaxation.html">Relaxation</a></li>
-                <li><a href="./cultrul.html">Cultural </a></li>
-            </ul>
-          </li>
-          <li><a href="./food_page.html">Foods</a></li>
-          <li><a href="#">Festival</a></li>
-          <li><a href="#">Hotel</a></li>
-          <li><a href="./plan_your_trip.php">Plan Your Trip</a></li>
-          <li><a href="#">Blog</a></li>
-          <li><a href="">Benifit</a></li>
-      </ul>
-    </nav>
+    <?php require 'navigation.html'; ?>
     <!-- Hero Section -->
     <header class="hero-section">
         <p>“Discover Sri Lanka: <br> Paradise Awaits You”.</p>
@@ -174,12 +154,7 @@
             </div>
         </div>
     </section>
-
-
-    <footer>
-        <h1>hi</h1>
-    </footer>
-
+    <?php include 'footer.php'; ?>
     <script src="./script.js"></script>
 </body>
 </html>

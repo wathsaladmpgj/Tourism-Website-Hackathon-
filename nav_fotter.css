@@ -80,3 +80,87 @@ body {
 .nav-item ul li a::after {
   content: none; /* Remove arrow from child items */
 }
+
+
+
+/*--------footer ------------*/
+
+/* Footer Styles */
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  color: #f4f4f4;
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #f4f4f4;
+  padding-bottom: 5px;
+}
+
+.footer-column p,
+.footer-column ul {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin: 10px 0;
+}
+
+.footer-column ul li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #17a2b8;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #bbb;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #b3b3b3;
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #17a2b8;
+}

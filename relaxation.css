@@ -24,7 +24,7 @@ body {
     position: absolute;
     font-family: 'Covered By Your Grace';
     font-size: 70px;
-    margin-top: -80rem;
+    margin-top: -100rem;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -45,7 +45,7 @@ body {
     gap: 2rem; /* Adds spacing between image-item columns */
     height: 100%;
     padding: 2rem 0;
-    margin-top: -40rem;
+    margin-top: -60rem;
 }
 .image-grid img{
     width: 250px;
@@ -59,7 +59,7 @@ body {
     height: 100%; /* Ensures equal height within the grid */
 }
 .image-item2{
-    margin-top: 15rem;
+    margin-top: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: space-around; /* Evenly distributes images vertically */
@@ -91,6 +91,7 @@ body {
     flex-direction: row;
     justify-content: center;
     gap: 3rem;
+    margin-bottom: 3rem;
 }
 .card{
     width: 300px;
