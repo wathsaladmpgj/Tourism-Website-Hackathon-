@@ -1,0 +1,534 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #81d5ee;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007BFF;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Card Section */
+.festival-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+}
+
+.learn-more {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: 600;
+}
+
+/* Festival Details Section */
+.festival-details {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.festival-detail {
+  margin-bottom: 40px;
+}
+
+.festival-detail h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #007BFF;
+  margin-bottom: 15px;
+}
+
+.festival-detail-img-small {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.festival-detail p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
+/* New Festivals Section */
+.new-festivals-section {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.festival-card {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.festival-card-text {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.festival-card-text h2 {
+  font-size: 28px;
+  color: #007BFF;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.festival-card-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.festival-card-text .festival-button {
+  text-decoration: none;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.festival-card-text .festival-button:hover {
+  background-color: #0056b3;
+}
+
+.festival-card-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+}
+
+.festival-card-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+/* General Styles */
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333;
+}
+
+/* Navbar Styles */
+.navbar {
+  background-color: #81d5ee;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #007BFF;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(70%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Card Section */
+.festival-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 16px;
+  color: #555;
+}
+
+.learn-more {
+  text-decoration: none;
+  color: #007BFF;
+  font-weight: 600;
+}
+
+/* Festival Details Section */
+.festival-details {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.festival-detail {
+  margin-bottom: 40px;
+}
+
+.festival-detail h2 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #007BFF;
+  margin-bottom: 15px;
+}
+
+.festival-detail-img-small {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.festival-detail p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #f1f1f1;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
+/* New Festivals Section */
+.new-festivals-section {
+  background-color: #f9f9f9;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.festival-card {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #ffffff;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.festival-card-text {
+  flex: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.festival-card-text h2 {
+  font-size: 28px;
+  color: #007BFF;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.festival-card-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.festival-card-text .festival-button {
+  text-decoration: none;
+  background-color: #007BFF;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.festival-card-text .festival-button:hover {
+  background-color: #0056b3;
+}
+
+.festival-card-image {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f1f1;
+}
+
+.festival-card-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+}
+
+.festival-cards .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.festival-cards .card:hover {
+  transform: scale(1.05); /* Slightly enlarge the card */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect */
+}
+
+.festival-cards .card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.festival-cards .card:hover img {
+  transform: scale(1.05); /* Slight zoom effect on image */
+}
+/* Footer Styles */
+
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 40px 20px;
+  font-size: 14px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-column {
+  flex: 1 1 250px;
+  min-width: 200px;
+}
+
+.footer-column h3 {
+  color: #f4f4f4;
+  margin-bottom: 15px;
+  font-size: 18px;
+  border-bottom: 2px solid #f4f4f4;
+  padding-bottom: 5px;
+}
+
+.footer-column p,
+.footer-column ul {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.footer-column ul {
+  list-style: none;
+}
+
+.footer-column ul li {
+  margin: 10px 0;
+}
+
+.footer-column ul li a {
+  color: #b3b3b3;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover {
+  color: #17a2b8;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #bbb;
+}
+
+.social-links {
+  margin-top: 10px;
+}
+
+.social-links a {
+  color: #b3b3b3;
+  margin-right: 15px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #17a2b8;
+}
