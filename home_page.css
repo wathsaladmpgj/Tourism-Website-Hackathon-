@@ -82,6 +82,11 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.destination-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 .destination-card h2{
     position: absolute;
@@ -103,6 +108,12 @@ body {
     background-color: black;
     padding: 5px;
     border-radius: 4px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 12px rgba(11, 0, 0, 0.5);
 }
 
 /*Popular activitees*/
@@ -307,17 +318,7 @@ body {
     gap: 4rem;
     padding: 3rem;
 }
-.blog-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
-}
-.blog-container img{
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-}
+
 
 /*---------Blog section -----------------*/
 #blog-container {
@@ -341,6 +342,12 @@ body {
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .blog-card img {
@@ -405,6 +412,11 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.confidence-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 .confidence-card p{
     font-size: 16px;

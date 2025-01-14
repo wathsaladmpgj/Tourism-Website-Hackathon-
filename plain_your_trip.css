@@ -19,11 +19,12 @@ body {
     display: flex;
     flex-direction: row;
     gap: 10rem;
-    background-color: #ccc;
+    backdrop-filter: blur(5px); /* For a frosted glass effect */
     padding: 8px;
     justify-content: center;
     border-radius: 10px;
-    opacity: 0.6;
+    border: #e0e0e0;
+    border: 5px solid #e0e0e0;
 }
 .one_select{
     display: flex;
@@ -194,7 +195,7 @@ button:hover {
 }
 
 /* Container styles */
-.guide-table {
+.guide-table, .meals-table {
     width: 100%;
     border-collapse: collapse;
     margin: 20px 0;
@@ -233,7 +234,7 @@ button:hover {
 }
 
 /* Cell styles */
-.table-row td {
+.table-row td, .tb-row td {
     padding: 15px;
     font-size: 14px;
     line-height: 1.5;
@@ -249,6 +250,52 @@ button:hover {
 /* Second column (Details) styles */
 .table-row td:last-child {
     color: #555;
+}
+
+/*---vehical ----------*/
+.vehicle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.vehicle-details{
+    width: 1100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+}
+.vehicle-option{
+    width: 300px;
+    background-color: #2c3e50;
+    border-radius: 10px;
+    padding: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.vehicle-option p{
+    padding: 10px;
+    color: white;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.vehicle-option:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+
+.tb-row th {
+    padding: 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.tb-row{
+    padding: 1rem;
 }
 
 /* Responsive styles */

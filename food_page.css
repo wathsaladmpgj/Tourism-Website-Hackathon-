@@ -100,6 +100,11 @@ body {
     border: 1px solid #ddd;
     text-align: center;
     border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 
 .feature-box h3 {
@@ -133,6 +138,11 @@ body {
     width: 266px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.fd-admission-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 .fd-admission-card p,h4{
     text-align: left;

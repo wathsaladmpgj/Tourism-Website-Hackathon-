@@ -61,7 +61,7 @@
         }
 
         // Fetch blog posts from the database
-        $sql = "SELECT image FROM blog_images ORDER BY created_at DESC";
+        $sql = "SELECT image FROM binifit_images ORDER BY created_at DESC";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {

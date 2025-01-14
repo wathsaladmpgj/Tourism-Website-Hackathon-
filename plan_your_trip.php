@@ -195,26 +195,44 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </table>
         </div>
 
-        <div>
+        <div class="vehicle">
             <h2>Select Vehicle Options</h2>
-            <div class="vehicle-options">
+            <div class="vehicle-details">
                 <div class="vehicle-option">
                     <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
-                    <p>Car: Comfortable and stylish for city tours and short distances.</p>
+                    <p>Bike: Comfortable and stylish for city tours and short distances.</p>
                 </div>
                 <div class="vehicle-option">
-                   <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
-                    <p>Van: Spacious and versatile for group tours and family trips.</p>
+                    <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
+                    <p>Tuktuk:For adventurous individual travelers or couples</p>
                 </div>
                 <div class="vehicle-option">
-                <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
-                    <p>4x4: Rugged and durable for off-road adventures and mountain treks.</p>
+                    <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
+                    <p>Car : Ideal for couples or small families.</p>
+                </div>
+                <div class="vehicle-option">
+                    <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
+                    <p>Van/Minibus:Best for groups or larger families.</p>
                 </div>
             </div>
         </div>
+
+        <div>
+            <h2> Add Meals</h2>
+            <table class="meals-table">
+                <tr class="tb-row">
+                    <th>Breakfast and Dinner</th>
+                    <th>Self-Catering</th>
+                    <th>Barbecue Experience</th>
+                </tr>
+                <tr class="tb-row">
+                    <td>Enjoy a hearty breakfast and a satisfying dinner at your accommodation, featuring a mix of local and international cuisines.</td>
+                    <td>Stay at accommodations equipped with kitchen facilities, perfect for preparing your own meals with fresh, local ingredients</td>
+                    <td>Savor a unique barbecue experience under the stars, complete with fresh seafood or marinated meats, grilled to perfection.</td>
+                </tr>
+            </table>
+        </div>
     </section>
-
-
 
     <?php include 'footer.php'; ?>
 </body>
