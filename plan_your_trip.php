@@ -141,6 +141,81 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <p>No locations available for the selected day.</p>
     <?php endif; ?>
 
+
+    <section class="details">
+        <div>
+            <h2>Choose Your Travel Type</h2>
+            <div class="travel-type">
+                <div class="travel-type-details">
+                    <p>Individual: Adventure-focused or budget-friendly options.</p>
+                    <img src="./images/tour_plain/tour_tp1.png" alt="Travel Type 1">
+                </div>
+                <div class="travel-type-details">
+                    <p>Couple: Romantic escapes, private tours, and serene locations.</p>
+                    <img src="./images/tour_plain/tour_tp2.png" alt="Travel Type 1">
+                </div>
+                <div class="travel-type-details">
+                    <p>Family: Kid-friendly activities, spacious accommodations, and balanced itineraries.</p>
+                    <img src="./images/tour_plain/tour_tp3.png" alt="Travel Type 1">
+                </div>
+                <div class="travel-type-details">
+                    <p>Group: Special discounts and larger accommodations.</p>
+                    <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <h2> Pick Your Guide Type</h2>
+            <table class="guide-table">
+                <tr class="table-header">
+                    <th>Guide Type</th>
+                    <th>Details</th>
+                </tr>
+                <tr class="table-row">
+                    <td>Local Guide (Human)</td>
+                    <td>Experience authentic Sri Lankan culture and traditions with a local guide. Gain insights into the country's history, customs, and hidden gems.</td>
+                </tr>
+                <tr class="table-row">
+                    <td>Adventure Guide (Human)</td>
+                    <td>Embark on thrilling adventures with an expert adventure guide. Explore Sri Lanka's natural wonders, wildlife, and adrenaline-pumping activities.</td>
+                </tr>
+                <tr class="table-row">
+                    <td>Historical Guide (Human)</td>
+                    <td>Discover Sri Lanka's rich history and heritage with a knowledgeable historical guide. Visit ancient sites, temples, and monuments with fascinating stories.</td>
+                </tr>
+                <tr class="table-row">
+                    <td>Wildlife Guide (Human)</td>
+                    <td>Encounter Sri Lanka's diverse wildlife and ecosystems with a wildlife guide. Spot rare species, go birdwatching, and explore national parks with expert guidance.</td>
+                </tr>
+                <tr class="table-row">
+                    <td>AI Guide</td>
+                    <td>Cost-effective, 24/7 support, real-time updates, and navigation. <b>We provide a mobile ai agent app. After paying for the tour, you can log into the app using the ID you receive.</b> </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <h2>Select Vehicle Options</h2>
+            <div class="vehicle-options">
+                <div class="vehicle-option">
+                    <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
+                    <p>Car: Comfortable and stylish for city tours and short distances.</p>
+                </div>
+                <div class="vehicle-option">
+                   <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
+                    <p>Van: Spacious and versatile for group tours and family trips.</p>
+                </div>
+                <div class="vehicle-option">
+                <img src="./images/tour_plain/tour_tp4.png" alt="Travel Type 1">
+                    <p>4x4: Rugged and durable for off-road adventures and mountain treks.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
     <?php include 'footer.php'; ?>
 </body>
 </html>
