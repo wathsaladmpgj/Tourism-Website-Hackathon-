@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./home_page.css">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 </head>
 <body>
     <?php require 'navigation.html'; ?>
@@ -17,8 +18,8 @@
 
     <!-- About Srilanka -->
     <section class="about-srilanka">
-        <h1>About Sri Lanka</h1>
-        <p>Sri Lanka, an island paradise in the Indian Ocean, is renowned for its rich history, diverse culture, and breathtaking <br> landscapes. From ancient temples and stunning beaches to lush tea plantations and vibrant wildlife, the island offers a <br> perfect blend of nature and tradition. Explore the bustling streets of Colombo, hike through the scenic hill country, or visit <br> UNESCO World Heritage sites like Sigiriya and Anuradhapura. Sri Lanka is also famous for its delicious cuisine, warm <br> hospitality, and colorful festivals. Whether you're seeking adventure, relaxation, or cultural immersion, Sri Lanka promises <br> an unforgettable experience for every traveler.
+        <h1 data-aos="fade-down" data-aos-duration="1500">About Sri Lanka</h1>
+        <p data-aos="fade-down" data-aos-duration="1500">Sri Lanka, an island paradise in the Indian Ocean, is renowned for its rich history, diverse culture, and breathtaking <br> landscapes. From ancient temples and stunning beaches to lush tea plantations and vibrant wildlife, the island offers a <br> perfect blend of nature and tradition. Explore the bustling streets of Colombo, hike through the scenic hill country, or visit <br> UNESCO World Heritage sites like Sigiriya and Anuradhapura. Sri Lanka is also famous for its delicious cuisine, warm <br> hospitality, and colorful festivals. Whether you're seeking adventure, relaxation, or cultural immersion, Sri Lanka promises <br> an unforgettable experience for every traveler.
         </p>
     </section>
 
@@ -61,34 +62,34 @@
     <section class="popular-activities">
         <h1> “Adventures Beyond Imagination”</h1>
      <div class="container">
-        <div class="image-gallery">
+        <div class="image-gallery" data-aos="fade-right" data-aos-duration="1500">
             <img src="./images/home-act1.png" alt="Surfing" class="gallery-img1">
             <img src="./images/home-act-3.png" alt="Bonfire" class="gallery-img2">
             <img src="./images/home-act-2.png" alt="Hiking" class="gallery-img3">
         </div>
-        <div class="text-box">
+        <div class="text-box" data-aos="fade-left" data-aos-duration="1500">
             <h1>"Unleash Your Adventurous Spirit in Sri Lanka"</h1>
             <p>Experience thrilling adventures in Sri Lanka with wild and sea safaris, boat rides, surfing, rope jumping, balloon tows, diving, camping, and bonfires. Discover an unforgettable blend of adrenaline and nature in this tropical paradise.</p>
         </div>
      </div>
      <div class="container">
-        <div class="text-box">
+        <div class="text-box" data-aos="fade-right" data-aos-duration="1500">
             <h1>"Rejuvenate Your Body and Soul in Sri Lanka"</h1>
             <p>Indulge in ultimate relaxation with Sri Lanka's tranquil spas, revitalizing yoga sessions, traditional Ayurveda treatments, and soothing fish therapy. Embrace serenity and holistic wellness amidst the island's natural beauty, leaving you refreshed and recharged.</p>
         </div>
-        <div class="image-gallery">
+        <div class="image-gallery" data-aos="fade-left" data-aos-duration="1500">
             <img src="./images/hom-act-4.png" alt="Surfing" class="gallery-ig1">
             <img src="./images/home-act-5.png" alt="Bonfire" class="gallery-ig2">
             <img src="./images/home-act-6.png" alt="Hiking" class="gallery-ig3">
         </div>
      </div>
      <div class="container">
-        <div class="image-gallery">
+        <div class="image-gallery" data-aos="fade-right" data-aos-duration="1500">
             <img src="./images/home-act-7.png" alt="Surfing" class="gallery-img1">
             <img src="./images/home-act-8.png" alt="Bonfire" class="gallery-img2">
             <img src="./images/home-act-9.png" alt="Hiking" class="gallery-img3">
         </div>
-        <div class="text-box">
+        <div class="text-box" data-aos="fade-left" data-aos-duration="1500">
             <h1>"Immerse Yourself in Sri Lanka's Cultural Wonders"</h1>
             <p>Experience authentic Sri Lankan culture with village tours, tea picking, traditional cooking classes, vibrant festivals, and bustling local markets. Engage with the island's rich traditions and warm hospitality for a truly memorable and enriching journey.</p>
         </div>
@@ -156,5 +157,7 @@
     </section>
     <?php include 'footer.php'; ?>
     <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="./animation.js"></script>
 </body>
 </html>
