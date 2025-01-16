@@ -15,7 +15,7 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Admin Dashboard | Korsat X Parmaga</title>
     <!-- ======= Styles ====== -->
-    <link rel="stylesheet" href="./main_admin.css">
+    <link rel="stylesheet" href="./adminpanel_tour_add.css">
     <link rel="stylesheet" href="./admin_blogadd.css">
     
 </head>
@@ -88,7 +88,7 @@ $result = $conn->query($sql);
             <div class="details">
                 <div class="recentOrders">
                     <div class="cardHeader">
-                        <h2>New Bookings</h2>
+                        <h2>Add New Blog Image</h2>
                     </div>
                     <div>
                         <?php
@@ -123,7 +123,7 @@ $result = $conn->query($sql);
                                                 // Insert data into the database
                                                 $sql = "INSERT INTO blog_images (title, image, description) VALUES ('$title', '$imageUploadPath', '$description')";
                                                 if ($conn->query($sql) === TRUE) {
-                                                    echo "<script>alert('Image added successfully!'); window.location.href='admin_blog_add.php';</script>";
+                                                    echo "<script>alert('Image added successfully!'); window.location.href='adminpanel_blog_add.php';</script>";
                                                 } else {
                                                     echo "Error: " . $sql . "<br>" . $conn->error;
                                                 }
@@ -156,15 +156,14 @@ $result = $conn->query($sql);
                                 // Delete the blog entry from the database
                                 $deleteSql = "DELETE FROM blog_images WHERE id = $deleteId";
                                 if ($conn->query($deleteSql) === TRUE) {
-                                    echo "<script>alert('Blog deleted successfully!'); window.location.href='admin_blog_add.php';</script>";
+                                    echo "<script>alert('Blog deleted successfully!'); window.location.href='adminpanel_blog_add.php';</script>";
                                 } else {
                                     echo "Error deleting blog: " . $conn->error;
                                 }
                             }
                         ?>
                         <div class="form-container">
-                            <h2>Add New Blog Image</h2>
-                            <form action="admin_blog_add.php" method="POST" enctype="multipart/form-data">
+                            <form action="adminpanel_blog_add.php" method="POST" enctype="multipart/form-data">
                                 <label for="title">Title:</label>
                                 <input type="text" id="title" name="title" required>
 
@@ -201,7 +200,7 @@ $result = $conn->query($sql);
                                                         <td><img src='{$row['image']}' alt='{$row['title']}' width='100'></td>
                                                         <td>{$row['description']}</td>
                                                         <td>
-                                                            <a href='admin_blog_add.php?delete_id={$row['id']}' onclick=\"return confirm('Are you sure you want to delete this blog?');\">Delete</a>
+                                                            <a href='adminpanel_blog_add.php?delete_id={$row['id']}' onclick=\"return confirm('Are you sure you want to delete this blog?');\">Delete</a>
                                                         </td>
                                                     </tr>";
                                             }
