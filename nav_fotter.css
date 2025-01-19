@@ -81,12 +81,7 @@ body {
   content: none; /* Remove arrow from child items */
 }
 
-
-
-/*--------footer ------------*/
-
 /* Footer Styles */
-
 .footer {
   background-color: #222;
   color: #fff;
@@ -163,4 +158,67 @@ body {
 
 .social-links a:hover {
   color: #17a2b8;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  /* Navbar */
+  .navbar {
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links li {
+    margin-bottom: 10px;
+  }
+
+  .nav-links a {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  .nav-item ul {
+    position: static;
+    display: none;
+    box-shadow: none;
+  }
+
+  .nav-item:hover ul {
+    display: block;
+    position: static;
+  }
+
+  /* Footer */
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    font-size: 10px;
+  }
+
+  .social-links a {
+    font-size: 12px;
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-column h3 {
+    font-size: 16px;
+  }
+
+  .footer-column ul li a {
+    font-size: 12px;
+  }
 }

@@ -12,8 +12,9 @@
   
 
   <!-- Hero Section -->
-  <?php include("navigation.html") ?>
+  
   <div class="hero">
+    <?php include("navigation.html") ?>
     <img src="./images/FESTIVAL/pexels-rayhan-ahmed-516407647-29948062.jpg" alt="Festivals in Sri Lanka" class="hero-image">
     <div class="hero-text">
       <h1>Welcome to the Festivals of Sri Lanka</h1>
