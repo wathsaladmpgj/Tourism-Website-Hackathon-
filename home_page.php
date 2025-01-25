@@ -105,15 +105,36 @@
         <div id="map">
             <img src="./images/Sri Lanka Satellite Map.png" alt="Map" style="width: 100%; height: auto;">
             <!-- Example dots -->
-            <div class="dot" style="top: 30%; left: 40%;" 
-                 data-info="Location 1: Details about this point" 
-                 data-image="images/Nainital.png"></div>
-            <div class="dot" style="top: 50%; left: 60%;" 
-                 data-info="Location 2: Details about this point" 
-                 data-image="images/des_2.png"></div>
-            <div class="dot" style="top: 70%; left: 30%;" 
-                 data-info="Location 3: Details about this point" 
-                 data-image="location3.jpg"></div>
+            <div class="dot" style="top: 40%; left: 40%;" 
+                 data-info="Sigiriya: Details about this point" 
+                 data-image="images/map/sigiriya.jpg"></div>
+            <div class="dot" style="top: 65%; left: 68%;" 
+                 data-info="Badulla: Details about this point" 
+                 data-image="images/map/ella.jpg"></div>
+            <div class="dot" style="top: 72%; left: 15%;" 
+                 data-info="Colombo: Details about this point" 
+                 data-image="images/map/colombo.jpg"></div>
+            <div class="dot" style="top: 70%; left: 92%;" 
+                 data-info="Arugam Bay beach: Details about this point" 
+                 data-image="images/map/afrugambe.jpg"></div>
+            <div class="dot" style="top: 94.5%; left: 52%;" 
+                 data-info="Mirissa: Details about this point" 
+                 data-image="images/map/mirissa.jpg"></div>
+            <div class="dot" style="top: 96.5%; left: 35%;" 
+                 data-info="Gall forest: Details about this point" 
+                 data-image="images/map/galle.jpg"></div>
+            <div class="dot" style="top: 42%; left: 8%;" 
+                 data-info="Kalpitiya: Details about this point" 
+                 data-image="images/map/kalpitiya.jpg"></div>
+            <div class="dot" style="top: 72%; left: 55%;" 
+                 data-info="Nuwara Eliya: Details about this point" 
+                 data-image="images/map/nuwaraeliya.jpg"></div>
+            <div class="dot" style="top: 4%; left: 20%;" 
+                 data-info="Jafna: Details about this point" 
+                 data-image="images/map/jafna.jpg"></div>
+            <div class="dot" style="top: 68%; left: 44%;" 
+                 data-info="Kandy: Details about this point" 
+                 data-image="images/map/kandy.jpg"></div>
         </div>
         <div class="hover-image" id="hoverImage"></div>
       </div>

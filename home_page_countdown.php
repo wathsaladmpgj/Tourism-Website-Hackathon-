@@ -1,15 +1,5 @@
 <?php
-// Database connection
-$host = 'localhost';
-$user = 'root';
-$password = '';
-$database = 'tour_database';
-
-$conn = new mysqli($host, $user, $password, $database);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include ('db_connection.php');
 
 // Fetch event data
 $sql = "SELECT event_name, event_date FROM events";

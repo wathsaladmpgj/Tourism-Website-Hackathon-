@@ -26,52 +26,34 @@ $result = $conn->query($sql);
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon">
-                        <img src="./imges/4.png" style="width: 60px;" alt="">
-                        </span>
                         <span class="title">Travel Lannka</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="./adminpanel_tour_add.php.php">
-                        <span class="icon">
-                            <ion-icon name="home-outline"></ion-icon>
-                        </span>
                         <span class="title">Tour Add</span>
                     </a>
                 </li>
 
                 <li>
                     <a href="./adminpanel_benifit.php">
-                        <span class="icon">
-                            <ion-icon name="people-outline"></ion-icon>
-                        </span>
                         <span class="title">Benifit Add</span>
                     </a>
                 </li>
                 <li>
                     <a href="./adminpanel_blog_add.php">
-                        <span class="icon">
-                        <img src="./imges/flight_icon.jpg" style="width: 40px;" alt="">
-                        </span>
                         <span class="title">Blog Add</span>
                     </a>
                 </li>
                 <li>
                     <a href="./adminpanel_festival_add.php">
-                        <span class="icon">
-                        <img src="./imges/sub_icon.jpg" style="width: 40px;" alt="">
-                        </span>
                         <span class="title">Festival Add</span>
                     </a>
                 </li>
                 <li>
-                    <a href="">
-                        <span class="icon">
-                        <img src="./imges/flight_icon.jpg" style="width: 40px;" alt="">
-                        </span>
-                        <span class="title">Available Flight</span>
+                    <a href="./admin_locationadd.php">
+                        <span class="title">Location Add</span>
                     </a>
                 </li>
                 

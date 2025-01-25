@@ -1,10 +1,5 @@
 <?php
-// Database connection
-$conn = new mysqli("localhost", "root", "", "tour_database");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+include ('db_connection.php');
 
 $detailsOutput = ""; // Initialize output for details
 $plainId = isset($_GET['plain_id']) ? intval($_GET['plain_id']) : 0;
@@ -292,7 +287,19 @@ if (!isset($_SESSION['form_token'])) {
                         <?php endif; ?>
                     <h3 class="timeline_end">Tour End</h3>
                 </div>
+                <div>
+                    <?php
+                        if($guideType === 'ai') { ?>
+                            <div>
+                                <ul>
+                                    <li>You can use the id provided by us and spend gold at the respective destination</li>
+                                    <li>With our id you can get offers form our patner shop related to that day</li>
+                                </ul>
+                            </div>
+                    <?php } ?>
+                </div>
             </div>
+            
             
         </div>
         <!-- Form for selecting details-->
@@ -356,7 +363,7 @@ if (!isset($_SESSION['form_token'])) {
            </div><br>
            <?php
                 if($guideType === 'ai') { ?>
-                    <h3>Downlode AI agent</h3>
+                    <h3>Downlode AI agent(Add an apk here)</h3>
             <?php } ?>
         </div> 
     </div>

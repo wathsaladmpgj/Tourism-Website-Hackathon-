@@ -46,13 +46,7 @@
     <h2>Blogs</h2>
     <div class="blogs">
         <?php
-        // Database connection
-        $conn = new mysqli('localhost', 'root', '', 'tour_database');
-
-        // Check connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
+        include ('db_connection.php');
 
         // Fetch blog posts from the database
         $sql = "SELECT image FROM blog_images ORDER BY created_at DESC";

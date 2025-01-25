@@ -207,8 +207,8 @@ button:hover {
 
 /* Header styles */
 .table-header {
-    background-color: #2c3e50;
-    color: white;
+    background-color: rgb(236, 253, 255);
+    color: rgb(0, 0, 0);
 }
 
 .table-header th {
@@ -243,7 +243,7 @@ button:hover {
 /* First column (Guide Type) styles */
 .table-row td:first-child {
     font-weight: 600;
-    color: #2c3e50;
+    color:rgb(0, 0, 0);
     width: 25%;
 }
 
@@ -268,7 +268,7 @@ button:hover {
 }
 .vehicle-option{
     width: 300px;
-    background-color: #2c3e50;
+    background-color: rgb(236, 253, 255);
     border-radius: 10px;
     padding: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -277,7 +277,7 @@ button:hover {
 
 .vehicle-option p{
     padding: 10px;
-    color: white;
+    color: rgb(0, 0, 0);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .vehicle-option:hover {

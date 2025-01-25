@@ -1,12 +1,6 @@
 <?php
 // Database connection
-$conn = new mysqli("localhost", "root", "", "tour_database");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
+include ('db_connection.php');
 // Fetch all plain names for dropdown
 $plainNameQuery = "SELECT * FROM plain_name";
 $plainNames = $conn->query($plainNameQuery);
