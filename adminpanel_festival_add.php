@@ -96,7 +96,7 @@ $result = $conn->query($sql);
                                     $eventDate = $conn->real_escape_string($_POST['event_date']);
 
                                     if ($conn->query("INSERT INTO events (event_name, event_date) VALUES ('$eventName', '$eventDate')")) {
-                                        header("Location: save_festival.php"); // Refresh the page
+                                        header("Location: adminpanel_festival_add.php"); // Refresh the page
                                         exit;
                                     } else {
                                         echo "Error: " . $conn->error;
@@ -107,7 +107,7 @@ $result = $conn->query($sql);
                                 if (isset($_GET['delete_id'])) {
                                     $deleteId = intval($_GET['delete_id']);
                                     if ($conn->query("DELETE FROM events WHERE id = $deleteId")) {
-                                        header("Location: save_festival.php"); // Refresh the page
+                                        header("Location: adminpanel_festival_add.php"); // Refresh the page
                                         exit;
                                     } else {
                                         echo "Error: " . $conn->error;

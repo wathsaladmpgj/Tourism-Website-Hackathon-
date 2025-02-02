@@ -40,8 +40,8 @@
         </div>
         <div class="footer-column">
             <h3>Get in Touch</h3>
-            <p><strong>Email:</strong> info@tourismwebsite.com</p>
-            <p><strong>Phone:</strong> +1 (123) 456-7890</p>
+            <p><strong>Email:</strong> abc@gmail.com</p>
+            <p><strong>Phone:</strong> +94 711519402</p>
             <p><strong>Location:</strong> 123 Tourism Street, Adventure City</p>
             <div class="social-links">
                 <a href="#">Facebook</a>
